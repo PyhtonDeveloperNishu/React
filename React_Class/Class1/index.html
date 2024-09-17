@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>React</title>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script>
+        const rootDiv = document.getElementById("root");
+        // vanila js
+        // const h1 = document.createElement("h1")
+        // h1.classList.add("h1-heading")
+        // h1.innerText="Welcome to Reactjs";
+        // rootDiv.append(h1)
+
+        //react js
+
+        const h1React = React.createElement("h1", { className: "h1-heading" },"Welcome to Reactjs");
+
+        const p1React = React.createElement("p" ,null ,"this is first paragraph of div 1");
+        const div1 =React.createElement("div", {className: 'div_1'}, p1React);
+
+        const anchor = React.createElement("a",{ href: "https://www.google.com", target: "_blank" },  "   Visit Google");
+        const p2React = React.createElement("p" ,null ,"this is second paragraph of div 2   ",  anchor, "  click on link and visit google website.");
+        const div2 =React.createElement("div",{className:'div_2'},p2React);
+
+        const p3React = React.createElement("p" ,null ,"this is second paragraph of div 3   ", );
+        const div3 =React.createElement("div",{className:'div_3'},p3React);
+
+        const final = React.createElement(React.Fragment, null, h1React, div1,div2,div3)
+
+        ReactDOM.render(final,rootDiv);
+       
+
+    </script>
+</body>
+</html>
